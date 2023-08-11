@@ -6,11 +6,6 @@ import ptbot
 
 from pytimeparse import parse
 
-load_dotenv()
-
-TG_TOKEN = os.environ['TG_TOKEN']
-TG_CHAT_ID = os.environ['TG_CHAT_ID']
-
 
 def reply(chat_id, text):
     message_id = bot.send_message(TG_CHAT_ID, "Запускаю таймер")
@@ -41,6 +36,11 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
 
 
 if __name__ == '__main__':
+    load_dotenv()
+
+    TG_TOKEN = os.environ['TG_TOKEN']
+    TG_CHAT_ID = os.environ['TG_CHAT_ID']
+
     bot = ptbot.Bot(TG_TOKEN)
     bot.reply_on_message(reply)
     bot.run_bot()
