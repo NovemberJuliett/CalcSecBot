@@ -1,9 +1,6 @@
 import os
-
 from dotenv import load_dotenv
-
 import ptbot
-
 from pytimeparse import parse
 
 
